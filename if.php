@@ -31,11 +31,11 @@ if ($b == $c) {
 
 if ($b === $c) {
     // TODO: Replace the blanks with the correct description
-    echo "$b is equal $c\n";
+    echo "$b is identical $c\n";
 }
 
 // TODO: Replace `true` with the correct comparison
-if ($b !=$c) {
+if ($b != $c) {
     echo "$b is not equal to $c\n";
 }
 
