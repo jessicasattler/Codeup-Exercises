@@ -7,16 +7,14 @@ $c = '10';
 // TODO: Shorten these two if statements to a single if/else
 if ($a < $b) {
     echo "$a is less than $b\n";
-}
-if ($a >= $b) {
+}else{
     echo "$a is greater than or equal to $b\n";
 }
 
 // TODO: Shorten these two if statements to a single if/else
 if ($b < $c) {
     echo "$b is less than $c\n";
-}
-if ($b >= $c) {
+}else{
     echo "$b is greater than or equal to $c\n";
 }
 
@@ -26,10 +24,10 @@ if ($b >= $c) {
 // identical, equal, not equal/identical
 if ($b === $c) {
     echo "$b is identical to $c\n";
-}
-if ($b == $c) {
+}else if ($b == $c) {
     echo "$b is equal to $c\n";
-}
-if ($b != $c) {
+}else {
     echo "$b is not equal to $c\n";
 }
+// === compares data type and value (means completely identical) 
+// == compares only data type
