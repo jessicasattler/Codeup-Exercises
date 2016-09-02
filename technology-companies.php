@@ -45,4 +45,49 @@ $companies = [
     ]
 ];
 //I added the following
-print_r($comapnies);
+
+$copyCompanies = $companies;
+print_r($companies);
+
+// sort the $companies array by company name and output the results
+echo "ksort by \$company name".PHP_EOL;
+ksort($companies);
+print_r($companies);
+
+
+//Sort the people in each company alphabetically. You will need to use a foreach loop and will need to reassign each inner array after sorting. Output the result.
+
+foreach ($companies as $key => $value){
+    echo $key.PHP_EOL;
+    asort($value);
+    print_r($value);
+    // foreach($value as $value){
+    //     echo $value.PHP_EOL;
+    // }
+
+}
+echo "End";
+
+//sorts by array with the smallest amounts elements to the most amount of elements
+asort($companies);
+print_r($companies);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

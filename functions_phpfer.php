@@ -60,7 +60,7 @@ function throwErrorMessage($fx, $a, $b){
 
 // Add code to test your functions here
 
-echo add($val,0).PHP_EOL;
+echo add($val).PHP_EOL;
 echo subtract($val, $val2).PHP_EOL;
 echo multiply($val,$val2).PHP_EOL;
 echo division($val,0).PHP_EOL;
