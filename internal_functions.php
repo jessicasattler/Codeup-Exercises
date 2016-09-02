@@ -8,22 +8,28 @@ function inspect($a){
 
 	switch (gettype($a)){
 		case 'NULL':
-			echo "{$a} is NULL";
+			echo "The value is NULL";
 			break;
-		case 'Array':
-			echo "{$a} is an array";
-			break;
-		case 'empty array':
-			echo "{$a} is an empty array";
+		case 'array':
+			if ($a != []){
+				echo "The value is an array";
+			}else{
+				echo "The value is an empty array";
+			}
 			break;
 		case 'boolean':
-			echo "{$a} is True or False";
-			break;
-		case 'empty string':
-			echo "The string is empty";
+			if ($a) {
+				echo "{$a} is true";
+			}else{
+				echo "the boolean is false";
+			}
 			break;
 		case 'string':
-			echo "{$a} is a string ";
+			if ($a != ""){
+				echo "{$a} is a string";
+			}else{
+				echo "The value is an empty string";
+			}
 			break;
 		case 'integer':
 			echo "{$a} is an integer";
@@ -33,6 +39,7 @@ function inspect($a){
 			break;
 	}
 }
+
 // echo inspect (7).PHP_EOL;
 
 // If the variable is NULL, return "The value is NULL."

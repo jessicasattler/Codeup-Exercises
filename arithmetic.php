@@ -15,9 +15,9 @@ function throwErrorMessage($a,$b){
 
 function add($a,$b){
 	if(is_numeric($a)&& is_numeric($b)){
-		return $a +$b;
+		return $a + $b;
 	}else{
-		throwErrorMessage("add");
+		echo throwErrorMessage($a,$b);
 	}
 }
 
@@ -27,7 +27,7 @@ function subtract ($a,$b){
 	if(is_numeric($a)&& is_numeric($b)){
 		return $a -$b;
 	}else{
-		throwErrorMessage("subtract");
+		echo throwErrorMessage($a,$b);
 	}
 }
 
@@ -37,7 +37,7 @@ function multiply ($a, $b){
 	if(is_numeric($a)&& is_numeric($b)){
 		return $a * $b;
 	}else{
-		throwErrorMessage("multiply");
+		echo throwErrorMessage($a,$b);
 	}
 }
 
@@ -50,7 +50,7 @@ function divide($a,$b){
 			return "ERROR:Your second argument is {$b}. Not valid to divide by zero.";
 		}
 	}else{
-		throwErrorMessage("divide");
+		echo throwErrorMessage($a,$b);
 	}
 }
 
@@ -59,18 +59,18 @@ function modulus ($a,$b){
 	if(is_numeric($a)&& is_numeric($b)){
 		return $a % $b;
 	}else {
-		throwErrorMessage("modulus");
+		echo throwErrorMessage($a,$b);
 	}
 }
 
 
 // Add code to test your functions here
 //In PHP, global variables can't be accessed inside of functions, global variables only work in the global scope and local variables only in the local scope. Unlike in JavaScript where the global variables are accessible inside of the functions too.
-echo "Add: ".add (l,1).PHP_EOL;
-echo "Subtract: ".subtract (7,1).PHP_EOL;
-echo "Multiply: ".multiply (7,1).PHP_EOL;
-echo "Divide: ".divide (7,7).PHP_EOL;
-echo "Modulus: ".modulus (7,1).PHP_EOL;
+echo "Add: ".add ("l",1).PHP_EOL;
+echo "Subtract: ".subtract ("k",1).PHP_EOL;
+echo "Multiply: ".multiply (7,"r").PHP_EOL;
+echo "Divide: ".divide (7,"j").PHP_EOL;
+echo "Modulus: ".modulus (7,"o").PHP_EOL;
 
 echo "NEW";
 
