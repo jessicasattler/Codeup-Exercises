@@ -55,18 +55,18 @@ ksort($companies);
 print_r($companies);
 
 
-//Sort the people in each company alphabetically. You will need to use a foreach loop and will need to reassign each inner array after sorting. Output the result.
+//Order the people in each company alphabetically. You will need to use a foreach loop and will need to reassign each inner array after sorting. Output the result.
 
 foreach ($companies as $key => $value){
-    echo $key.PHP_EOL;
+    var_dump($value);
     asort($value);
+    //this is the correct way to reassign a sorted array 
+    $companies[$key] = $value;
+    echo "the following will be assorted alphabetically".PHP_EOL;
     print_r($value);
-    // foreach($value as $value){
-    //     echo $value.PHP_EOL;
-    // }
 
 }
-echo "End";
+echo "End".PHP_EOL;
 
 //sorts by array with the smallest amounts elements to the most amount of elements
 asort($companies);
