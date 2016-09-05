@@ -45,49 +45,30 @@ $companies = [
     ]
 ];
 
-//I'm making a copy of companies to remember the original when we modify it later
-$copyCompanies = $companies;
+//Add code to output the $companies array in its current form.
+
 print_r($companies);
 
-// sort the $companies array by company name and output the results
-echo "ksort by \$company name".PHP_EOL;
-ksort($companies);
+//Sort the $companies array by company name and output the results.
+
+echo "ksort by company name".PHP_EOL;
+ksort($companies).PHP_EOL;
 print_r($companies);
 
-
-//Order the people in each company alphabetically. You will need to use a foreach loop and will need to reassign each inner array after sorting. Output the result.
-
-foreach ($companies as $key => $value){
-    asort($value);
-    //this is the correct way to reassign a sorted array 
-    $companies[$key] = $value;
+//Sort the people in each company alphabetically. You will need to use a foreach loop and will need to reassign each inner array after sorting. Output the result.
 
 
-    echo "the following will be assorted alphabetically".PHP_EOL;
-    print_r($value);
-}
-echo "End".PHP_EOL;
+    foreach($companies as $company => $people){
+            asort($people);
+        //this is the correct eay to reassign a sorted array
+            $companies[$company] = $people;
 
-//sorts by array with the smallest amounts elements to the most amount of elements
-asort($companies);
+        
+    }
+    echo "the following is outside of loop".PHP_EOL;
+    print_r($companies);
+
+
+arsort ($companies);
+echo "The following is sorting the companies from biggest to smallest".PHP_EOL;
 print_r($companies);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
