@@ -18,16 +18,16 @@ $query = 'Tina' && 'Dana';
 
 
 //or zach's way
-// function arrayContains($haystack, $needle){
-// 	$result = array_search($needle, $haystack);
-// 	return $result !== false;
-// }
-
-//my attempt to apply this
-function arrayContains($names, $value){
-	$result = array_search($value, $names);
+function arrayContains($haystack, $needle){
+	$result = array_search($needle, $haystack);
 	return $result !== false;
 }
+
+//my attempt to apply this
+// function arrayContains($names, $value){
+// 	$result = array_search($value, $names);
+// 	return $result !== false;
+// }
 // Create a function to compare 2 arrays that returns the number of values in common between the arrays. Use the 2 example arrays and make sure your solution uses array_search().
 
 
