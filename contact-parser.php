@@ -13,46 +13,12 @@ if (! isset($argv[1])){
 
 $contacts = $argv[1];
 
-//what do we do with the filename?
-//takes a filename and returns the contents of our file as a string
 
-
-// function parseContacts($filename)
-// {
- 
-
-//     // todo - read file and parse contacts
-//     //create a resource that points to our file
-//     //like a cursor or pointer
-//     $handle = fopen($filename, 'r');
-
-//     //our handle is at the start of the file, read until the end of the file
-//     //i.e. the size of the file
-//     $fileContents = fread($handle, filesize($filename));
-
-//     // $contacts = array($fileContents);
-//     $contacts = explode ("\n", $fileContents);
-   
-
-//     foreach($contacts as $key => $value){
-//     	echo "This is the key {$key} and this is the value {$value} ".PHP_EOL;
-
-
-//     }
-
-//     // $contactsArray = explode ('|',$contacts);
-
-//     fclose($handle);
-
-//     return $contacts;
-// }
-
-// var_dump(parseContacts('contacts.txt'));
-
+//this function adds the - in between the phone numbers
 function formatPhoneNumber($number){
 	$arrayOfNumbers = str_split($number);
 	$string = $arrayOfNumbers[0]
-			  . $arrayOfNumbers[1]
+			. $arrayOfNumbers[1]
             . $arrayOfNumbers[2]
             . "-"
             . $arrayOfNumbers[3]
@@ -83,6 +49,7 @@ function parseContacts ($filename){
 
 	//$fileContents was trimmed so in my loop, we don't think that the white space after
 	//the last contact is another contact, trim trims white space to its left and right
+	//explodeturns strings into arrays
 	$contacts = explode ("\n", $fileContents);
 
 	//loop trough the contents array
@@ -91,48 +58,30 @@ function parseContacts ($filename){
 			//we'll need to explode each line on '|' to ge tthe name and number
 		//do something to format the phone number, maybe a formatPhoneNumber function?
 		//push that associative array onto the contacts array
+	$contacts2=[];
 	foreach($contacts as $key => $value){
 
 		$nameAndNumberArray2 = explode("|",$value);
-	
+		// $nameAndNumberArray2  =    ["John Smith", "210-333-4333"]
+		// The code below is shorthand for pushing a new element into the $nameAndNumberArray with the 
+		// key "name" and the value of what $nameAndNumberArray2[0] evaluates to
 		$nameAndNumberArray['name'] = $nameAndNumberArray2[0];
 		$nameAndNumberArray['number'] = formatPhoneNumber($nameAndNumberArray2[1]);
 
-		// foreach($nameAndNumberArray as $key =>$value){
-			// $getPartString = substr($nameAndNumberArray['number'],0,3).PHP_EOL;
-			// echo $getPartString."-";
-			// $getPartString2 = substr($nameAndNumberArray['number'],3,3).PHP_EOL;
-			// echo $getPartString2."-";
-			// $getPartString3 = substr($nameAndNumberArray['number'],8);
-			// echo $getPartString3;
-		// }
-
-		// print_r($nameAndNumberArray);
+		
 
 		
-		array_push($contacts,$nameAndNumberArray);
-		array_shift($contacts);
+		array_push($contacts2,$nameAndNumberArray);
+		// array_shift($contacts);
 		
 
 	}
 
 
-	return $contacts;
+	return $contacts2;
 }
 
 var_dump(parseContacts('contacts.txt'));
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
