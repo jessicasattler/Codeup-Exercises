@@ -7,7 +7,8 @@
 require_once 'Log.php';
 
 // Create an instance of the Log class
-$logCopy = new Log();
+$logCopy = new Log("cli");
+
 // Set the $filename property in the class; use the format log-YYYY-MM-DD.log.
 // Call the methods logMessage(), info(), and error() with to test the functionality of each.
 
@@ -15,7 +16,6 @@ $logCopy = new Log();
 $logCopy->error('username or password is incorrect');
 $logCopy->info('user logged in succesfully');
 
-$logCopy = new Log("cli");
 
 //to check that the copy is working the way it should, run log_test.php in the command line, do an ls,  then cat and copy and paste the name of the new file that was just created with today's date
 
