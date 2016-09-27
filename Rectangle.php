@@ -12,15 +12,15 @@
 class Rectangle
 {
 	public $height;
-	public $width
+	public $width;
 
-	public_function__construct($height, $width)
+	public function __construct($height, $width)
 	{
 		$this->height = $height;
 		$this->width = $width;
 	}
 
-	public_function area()
+	public function area()
 	{
 		return $this->height *  $this->width;
 	}
