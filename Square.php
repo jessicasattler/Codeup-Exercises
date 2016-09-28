@@ -35,8 +35,13 @@ class Square extends Rectangle
 
 $smallSquare = new Square(20,20);
 
-echo "This is the square ".$smallSquare->perimeter() .PHP_EOL;
-echo "This is the square ".$smallSquare->area() .PHP_EOL;
+echo "This is the square and is small ".$smallSquare->perimeter() .PHP_EOL;
+echo "This is the square and is small ".$smallSquare->area() .PHP_EOL;
+
+//Visibility:
+// Before testing the Rectangle and Square classes, try to think of the outcomes before executing. Will the Rectangle class work as before?Yes. What about the Square class? Yes .Create objects from both classes and execute the area() method. Did the result meet your expected outcome?
 
 
+$largeSquare = new Square (40,40);
 
+echo "This is uses square class and is large ".$largeSquare->area() .PHP_EOL;

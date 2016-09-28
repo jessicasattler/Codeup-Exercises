@@ -9,10 +9,15 @@
 // a constructor to set the height and width on instantiation
 // a method named area() that returns the area based on the height and width.
 
+// Visibility:
+// Update the Rectangle class from the previous lesson to contain private properties for height and width.
+
+// Before testing the Rectangle and Square classes, try to think of the outcomes before executing. Will the Rectangle class work as before? What about the Square class? Create objects from both classes and execute the area() method. Did the result meet your expected outcome?
+
 class Rectangle
 {
-	public $height;
-	public $width;
+	protected $height;
+	protected $width;
 
 	public function __construct($height, $width)
 	{
