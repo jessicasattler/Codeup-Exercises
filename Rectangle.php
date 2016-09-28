@@ -16,6 +16,8 @@
 
 //Update the height and width properties of the Rectangle class to have a visibility of protected. Repeat the previous step. Did the result meet your expected outcome this time?
 
+// Change the visibility back to private for both properties. Create the necessary getters and setters for the Rectangle and Square classes to work as desired with only private properties.
+
 class Rectangle
 {
 	private $height;
@@ -23,16 +25,41 @@ class Rectangle
 
 	public function __construct($height, $width)
 	{
+		$this->setHeight($height);
+		$this->setWidth($width);
+	}
+
+
+	protected function setHeight($height)
+	{
 		$this->height = $height;
+	}
+
+	protected function setWidth($width)
+	{
 		$this->width = $width;
+	}	
+
+	public function getHeight()
+	{
+		return $this->height;
+	}
+
+	public function getWidth()
+	{
+		return $this->width;
 	}
 
 	public function area()
 	{
-		return $this->height *  $this->width;
+		// return $this->height *  $this->width;
+		return $this->getHeight() * $this->getWidth();
 	}
 
 	public function perimeter(){
-		return ($this->height * 2) + ($this->width * 2);
+		// return ($this->height * 2) + ($this->width * 2);
+		return ($this->getHeight() * 2) + ($this->getWidth() *2); 
 	}
+
+
 }
