@@ -7,4 +7,4 @@ require_once 'Rectangle.php';
 
 $smallRectangle = new Rectangle(15,10);
 
-echo $smallRectangle->area() .PHP_EOL;
+echo "This uses rectangle ".$smallRectangle->area() .PHP_EOL;
