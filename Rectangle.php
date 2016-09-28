@@ -18,8 +18,8 @@
 
 class Rectangle
 {
-	p $height;
-	protected $width;
+	private $height;
+	private $width;
 
 	public function __construct($height, $width)
 	{

@@ -39,7 +39,7 @@ echo "This is the square and is small ".$smallSquare->perimeter() .PHP_EOL;
 echo "This is the square and is small ".$smallSquare->area() .PHP_EOL;
 
 //Visibility:
-// Before testing the Rectangle and Square classes, try to think of the outcomes before executing. Will the Rectangle class work as before?Yes. What about the Square class? Yes .Create objects from both classes and execute the area() method. Did the result meet your expected outcome?
+// Before testing the Rectangle and Square classes, try to think of the outcomes before executing. Will the Rectangle class work as before? What about the Square class?  .Create objects from both classes and execute the area() method. Did the result meet your expected outcome?
 
 
 $largeSquare = new Square (40,40);
