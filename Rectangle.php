@@ -14,9 +14,11 @@
 
 // Before testing the Rectangle and Square classes, try to think of the outcomes before executing. Will the Rectangle class work as before? What about the Square class? Create objects from both classes and execute the area() method. Did the result meet your expected outcome?
 
+//Update the height and width properties of the Rectangle class to have a visibility of protected. Repeat the previous step. Did the result meet your expected outcome this time?
+
 class Rectangle
 {
-	protected $height;
+	p $height;
 	protected $width;
 
 	public function __construct($height, $width)
