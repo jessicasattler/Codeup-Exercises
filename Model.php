@@ -1,12 +1,15 @@
 <?php 
-
- // We are going to begin to build out a Model class that we will eventually use to connect to a database and store data. Models are the "M" in MVC, a popular design pattern for structuring data-driven web applications.
 //Create a Model class 
+
+// Add a new protected static property named $table. This table property will be used to let our model know which database table we will be representing.
+
+//In the Model class, add a static method named getTableName() that returns the value of the static property $table.
 
 class Model
 {
 	// An attributes property (array) that is not visible outside of the class
-	private $data = [];
+	protected $data = [];
+	protected static $table = 'users';
 
 	//Magic setter to populate $data array
 	public function __set($name, $value)
@@ -26,47 +29,44 @@ class Model
 		return null;
 	}
 
+	public static function getTableName()
+	{
+		//if I return self::$table instead of return static::$table,
+		//the child class will not be able to overwrite the parent class
+		//we would see users being returned versus users2, how it's overwritten in the child class
+		return static::$table;
+	}
 
 }
 
+//this is part of the magic, that we can name the property anything we want and it will be added
 $md = new Model();
 $md->name = 'John Smith';
-$md->group = 'Colony';
+$md->group = ['Colony','House','Settlement'];
 $md->age = 100;
 
 echo $md->name.PHP_EOL;
-echo $md->group.PHP_EOL;
+var_dump($md->group);
 echo $md->age.PHP_EOL;
 
 
-//zach's way
-class Model2
-{
-	protected $attributes = [];
-
-	//this is called when we define the property, like in the previous example when we did : $md->name = 'John Smith';
-	public function __set($nameOfProperty, $value)
-	{
-		$this->attributes[$nameOfProperty] = $value;
-	}
-
-	public function __get($nameOfThePropertyWeAreTryingToGet)
-	{
-		//isset does the same thing the array_key_exists
-		if(isset($this->attributes[$nameOfThePropertyWeAreTryingToGet])){
-				return $this->attributes[$nameOfThePropertyWeAreTryingToGet];
-			}
-		return null;
-	}
 
 
-}
 
-$md2 = new Model2();
-$md2->nameOfProperty = 'Pocahontas';
-$md2->anyPropertyIWantTo = ['any','value','I','want'];
 
-echo $md2->nameOfProperty. PHP_EOL;
-var_dump($md2->anyPropertyIWantTo);
-var_dump($md2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
